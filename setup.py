@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'cv_publisher = follow_diff_drive.cv_publisher:main'
+            'cv_publisher = follow_diff_drive.cv_publisher:main',
+            'teleop_twist = follow_diff_drive.teleop_twist:main'
         ],
     },
 )
