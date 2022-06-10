@@ -63,12 +63,15 @@ class CVControlSubPub(Node):
             twist.linear.x = 1.0
             x_pos = keypoints[0].pt[0]
             width = image.shape[1]
-            if width / 2 > x_pos + self.delta:
-                twist.angular.z = 0.5
-            elif width / 2 < x_pos - self.delta:
-                twist.angular.z = -0.5
-            else:
-                twist.angular.z = 0.0
+
+            twist.angular.z = - (x_pos - width / 2) / width 
+
+            # if width / 2 > x_pos + self.delta:
+            #     twist.angular.z = 0.5
+            # elif width / 2 < x_pos - self.delta:
+            #     twist.angular.z = -0.5
+            # else:
+            #     twist.angular.z = 0.0
 
         self.pub.publish(twist)
         print(twist.linear.x, twist.angular.z)
