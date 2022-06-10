@@ -43,35 +43,23 @@ class CVControlSubPub(Node):
         # Detect blobs
         keypoints = detector.detect(image)
 
-        # Draw blobs on our image as red circles
-        blank = np.zeros((1, 1))
-        blobs = cv2.drawKeypoints(image, keypoints, blank, (0, 0, 255),
-                          cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-
         # initializes the twist message
         twist = geometry_msgs.msg.Twist()
         twist.linear.y = 0.0
         twist.linear.z = 0.0
         twist.angular.x = 0.0
         twist.angular.y = 0.0
-        print(keypoints)
+        print(keypoints , len(keypoints))
         # if we don't see the ball we turn until we get a keypoint
         if len(keypoints) == 0:
             twist.linear.x = 0.0
-            twist.angular.z = 0.8
+            twist.angular.z = 0.5
         else:
             twist.linear.x = 1.0
             x_pos = keypoints[0].pt[0]
             width = image.shape[1]
 
-            twist.angular.z = - (x_pos - width / 2) / width 
-
-            # if width / 2 > x_pos + self.delta:
-            #     twist.angular.z = 0.5
-            # elif width / 2 < x_pos - self.delta:
-            #     twist.angular.z = -0.5
-            # else:
-            #     twist.angular.z = 0.0
+            twist.angular.z = - (x_pos - width / 2) / (width / 2) 
 
         self.pub.publish(twist)
         print(twist.linear.x, twist.angular.z)
