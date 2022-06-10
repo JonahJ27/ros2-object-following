@@ -4,7 +4,7 @@ Uses computer vision to have a simulated car follow a red ball. All simulation d
 
 To use: First create a development workspace and make a directory called follow_diff_drive the src folder. The colcon build the package.
 If you don't know how to do this see:
-[link](https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html)
+[ROS2 Tutorials](https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html)
 
 
 In order to launch the Gazebo world run in a terminal with ros2 sourced:
