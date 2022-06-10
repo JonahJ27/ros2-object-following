@@ -26,9 +26,9 @@ In order to make this actually interesting, open a third terminal with the same 
 ros2 run follow_diff_drive teleop_twist
 ```
 ```
-The t y u keys can be used to control the ball. 
-    g h j
-    b n m 
+The r t y keys can be used to control the ball. 
+    f g h
+    v b n 
 The u i o keys control the car.
     m , . 
     k l ;                                                                      
