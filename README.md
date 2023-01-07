@@ -2,7 +2,7 @@
 # ros2-object-following
 Uses computer vision to have a simulated car follow a red ball. All simulation done in gazebo and built with ROS2
 
-To use: First create a development workspace and make a directory called follow_diff_drive the src folder. The colcon build the package.
+To use: First create a development workspace and git clone this directory into the src folder. Then colcon build the package.
 If you don't know how to do this see:
 [ROS2 Tutorials](https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html)
 
